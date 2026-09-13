@@ -37,7 +37,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 12px;
         }
 
         h1, h2, h3, h4 { font-family: var(--font-luxury); }
@@ -53,11 +53,11 @@
             justify-content: center;
         }
 
-        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড */
+        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সংক্ষিপ্ত ও আকর্ষণীয়) */
         .auth-card {
             background: var(--surface-bg);
             border-radius: 18px;
-            padding: 35px 22px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.95);
             border: 1.5px solid rgba(212,175,55,0.25);
@@ -65,10 +65,10 @@
         }
 
         .logo-large {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .brand-title-large {
@@ -79,15 +79,19 @@
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .welcome-subtitle {
-            font-size: 0.82rem;
-            color: var(--text-gray);
-            line-height: 1.5;
-            margin-bottom: 22px;
-            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-family: var(--font-luxury);
         }
 
         .google-verify-btn {
@@ -333,27 +337,27 @@
         .menu-item i { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 16px; text-align: center; }
         .menu-item:hover { background: rgba(212,175,55,0.1); color: #fcf6ba; }
 
-        /* টোটাল অর্ডার (ক্লিকেবল ট্র্যাকিং) ও রিটার্ন অ্যামাউন্ট গ্রিড */
-        .stats-grid {
+        /* ৩টি আলাদা স্ট্যাটস বক্স (Total Orders, Tracking, Return Amount) */
+        .stats-grid-3 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
             margin-bottom: 12px;
         }
         .stat-card {
             background: #040404;
             border: 1.5px solid rgba(212,175,55,0.25);
-            padding: 12px;
-            border-radius: 12px;
+            padding: 10px 6px;
+            border-radius: 10px;
             text-align: center;
             cursor: pointer;
             transition: 0.3s;
         }
         .stat-card:hover { border-color: #fcf6ba; background: rgba(212,175,55,0.03); }
-        .stat-lbl { font-size: 0.6rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-weight: 800; margin-bottom: 3px; font-family: var(--font-body); white-space: nowrap; }
-        .stat-val { font-size: 1.2rem; font-weight: 900; color: #fff; font-family: var(--font-luxury); white-space: nowrap; }
+        .stat-lbl { font-size: 0.52rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-weight: 800; margin-bottom: 3px; font-family: var(--font-body); white-space: nowrap; }
+        .stat-val { font-size: 1rem; font-weight: 900; color: #fff; font-family: var(--font-luxury); white-space: nowrap; }
 
-        /* ক্লিকেবল ট্র্যাকিং ইউআরএল লিস্ট স্টাইল */
+        /* ট্র্যাকিং ইউআরএল লিস্ট স্টাইল */
         .tracking-list {
             display: flex;
             flex-direction: column;
@@ -402,7 +406,7 @@
             margin-bottom: 12px;
             display: flex;
             flex-direction: column;
-            height: 230px;
+            height: 220px;
             overflow: hidden;
         }
         .chat-header {
@@ -642,13 +646,11 @@
 
     <div class="page-container">
         
-        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড -->
+        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সংক্ষিপ্ত ও আকর্ষণীয়) -->
         <div class="auth-card" id="authSection">
             <img src="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400" alt="Logo" class="logo-large">
             <h1 class="brand-title-large">RORRAXY</h1>
-            <p class="welcome-subtitle">
-                Welcome to Customer Portal. Verify your identity with Google to access orders and connect with sellers.
-            </p>
+            <p class="welcome-subtitle">Welcome to Customer Portal</p>
 
             <button class="google-verify-btn" onclick="openInfoModal()">
                 <i class="fa-brands fa-google" style="color:#ea4335;"></i> Continue & Verify with Google
@@ -737,14 +739,18 @@
                     </div>
                 </div>
 
-                <!-- টোটাল অর্ডার (ক্লিকেবল ট্র্যাকিং) ও রিটার্ন অ্যামাউন্ট বক্স -->
-                <div class="stats-grid">
-                    <div class="stat-card" onclick="openPopupModal('tabTrackingPopup')">
-                        <div class="stat-lbl">Total Orders (Track)</div>
+                <!-- ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking, Return Amount -->
+                <div class="stats-grid-3">
+                    <div class="stat-card" onclick="openPopupModal('tabOrdersPopup')">
+                        <div class="stat-lbl">Total Orders</div>
                         <div class="stat-val" id="totalOrdersVal">02</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-lbl">Return Amount</div>
+                    <div class="stat-card" onclick="openPopupModal('tabTrackingPopup')">
+                        <div class="stat-lbl">Tracking</div>
+                        <div class="stat-val"><i class="fa-solid fa-location-arrow" style="font-size: 0.85rem; background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i></div>
+                    </div>
+                    <div class="stat-card" onclick="openPopupModal('tabWithdrawPopup')">
+                        <div class="stat-lbl">Return Amt</div>
                         <div class="stat-val" id="returnAmountVal">$0.00</div>
                     </div>
                 </div>
@@ -1004,6 +1010,25 @@
                         <i class="fa-solid fa-location-dot" style="background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
                     </div>`;
             } 
+            else if(tabType === 'tabOrdersPopup') {
+                htmlContent += `
+                    <h3 class="modal-title">Total Orders</h3>
+                    <p style="font-size: 0.72rem; color: var(--text-gray); text-align: center; margin-bottom: 12px;">Your recent purchase orders</p>
+                    <div class="tracking-list">
+                        <div class="tracking-item">
+                            <div class="tracking-info">
+                                <h4>Product #PRD-9021</h4>
+                                <p>Status: Confirmed & Processing</p>
+                            </div>
+                        </div>
+                        <div class="tracking-item">
+                            <div class="tracking-info">
+                                <h4>Product #PRD-9022</h4>
+                                <p>Status: Shipped to Courier</p>
+                            </div>
+                        </div>
+                    </div>`;
+            }
             else if(tabType === 'tabTrackingPopup') {
                 htmlContent += `
                     <h3 class="modal-title">Product Tracking</h3>
