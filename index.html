@@ -13,7 +13,6 @@
         :root {
             --bg-black: #020202;
             --surface-bg: #070707;
-            /* লোগোর প্রিমিয়াম গোল্ডেন গ্রেডিয়েন্ট থিম */
             --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             --text-white: #f3f3f3;
             --text-gray: #a5a5a5;
@@ -37,7 +36,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 12px;
+            padding: 15px;
         }
 
         h1, h2, h3, h4 { font-family: var(--font-luxury); }
@@ -46,18 +45,18 @@
 
         .page-container {
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সংক্ষিপ্ত ও আকর্ষণীয়) */
+        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড */
         .auth-card {
             background: var(--surface-bg);
             border-radius: 18px;
-            padding: 30px 20px;
+            padding: 35px 20px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.95);
             border: 1.5px solid rgba(212,175,55,0.25);
@@ -82,15 +81,13 @@
             margin-bottom: 6px;
         }
 
+        /* পপআপ সাবটাইটেল এখন নিখুঁত সাদা রঙের */
         .welcome-subtitle {
             font-size: 0.95rem;
-            font-weight: 700;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
+            font-weight: 600;
+            color: #ffffff;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             font-family: var(--font-luxury);
         }
 
@@ -131,7 +128,7 @@
             border-radius: 18px;
             padding: 24px 18px;
             width: 100%;
-            max-width: 600px;
+            max-width: 550px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.9);
             text-align: left;
             max-height: 88vh;
@@ -171,7 +168,7 @@
         .dashboard-wrapper {
             display: none;
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             flex-direction: column;
             gap: 12px;
         }
@@ -337,7 +334,7 @@
         .menu-item i { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 16px; text-align: center; }
         .menu-item:hover { background: rgba(212,175,55,0.1); color: #fcf6ba; }
 
-        /* ৩টি আলাদা স্ট্যাটস বক্স (Total Orders, Tracking, Return Amount) */
+        /* ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking (স্বতন্ত্র সোনালী বাটন ও টাচ অ্যানিমেশন), Return Amount */
         .stats-grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -357,7 +354,33 @@
         .stat-lbl { font-size: 0.52rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-weight: 800; margin-bottom: 3px; font-family: var(--font-body); white-space: nowrap; }
         .stat-val { font-size: 1rem; font-weight: 900; color: #fff; font-family: var(--font-luxury); white-space: nowrap; }
 
-        /* ট্র্যাকিং ইউআরএল লিস্ট স্টাইল */
+        /* ট্র্যাকিং কার্ডের জন্য স্বতন্ত্র প্রিমিয়াম সোনালী বাটন ও টাচ হ্যান্ড অ্যানিমেশন */
+        .stat-card-tracking {
+            background: var(--gold-gradient);
+            border: none;
+            position: relative;
+            box-shadow: 0 0 15px rgba(212,175,55,0.25);
+        }
+        .stat-card-tracking .stat-lbl {
+            -webkit-text-fill-color: #000;
+            font-weight: 900;
+        }
+        .stat-card-tracking .stat-val {
+            color: #000;
+        }
+        
+        /* টাচ বা হ্যান্ড অ্যানিমেশন আইকন */
+        .touch-hand-anim {
+            display: inline-block;
+            animation: touchBounce 1.2s infinite ease-in-out;
+            margin-left: 3px;
+        }
+        @keyframes touchBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-4px) scale(1.15); }
+        }
+
+        /* ট্র্যাকিং ইউআরএল লিস্ট স্টাইল (ইন্টারন্যাশনাল কুরিয়ার সহ) */
         .tracking-list {
             display: flex;
             flex-direction: column;
@@ -646,7 +669,7 @@
 
     <div class="page-container">
         
-        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সংক্ষিপ্ত ও আকর্ষণীয়) -->
+        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সাদা রঙের নিখুঁত সাবটাইটেল সহ) -->
         <div class="auth-card" id="authSection">
             <img src="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400" alt="Logo" class="logo-large">
             <h1 class="brand-title-large">RORRAXY</h1>
@@ -739,15 +762,18 @@
                     </div>
                 </div>
 
-                <!-- ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking, Return Amount -->
+                <!-- ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking (স্বতন্ত্র সোনালী বাটন ও টাচ অ্যানিমেশন সহ), Return Amount -->
                 <div class="stats-grid-3">
                     <div class="stat-card" onclick="openPopupModal('tabOrdersPopup')">
                         <div class="stat-lbl">Total Orders</div>
                         <div class="stat-val" id="totalOrdersVal">02</div>
                     </div>
-                    <div class="stat-card" onclick="openPopupModal('tabTrackingPopup')">
+                    <div class="stat-card stat-card-tracking" onclick="openPopupModal('tabTrackingPopup')">
                         <div class="stat-lbl">Tracking</div>
-                        <div class="stat-val"><i class="fa-solid fa-location-arrow" style="font-size: 0.85rem; background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i></div>
+                        <div class="stat-val">
+                            <i class="fa-solid fa-location-arrow" style="font-size: 0.85rem;"></i>
+                            <span class="touch-hand-anim">👆</span>
+                        </div>
                     </div>
                     <div class="stat-card" onclick="openPopupModal('tabWithdrawPopup')">
                         <div class="stat-lbl">Return Amt</div>
@@ -1032,23 +1058,23 @@
             else if(tabType === 'tabTrackingPopup') {
                 htmlContent += `
                     <h3 class="modal-title">Product Tracking</h3>
-                    <p style="font-size: 0.72rem; color: var(--text-gray); text-align: center; margin-bottom: 12px;">Click 'Track Live' to view courier tracking page</p>
+                    <p style="font-size: 0.72rem; color: var(--text-gray); text-align: center; margin-bottom: 12px;">Click 'Track Live' to view international courier tracking page</p>
                     <div class="tracking-list">
                         <div class="tracking-item">
                             <div class="tracking-info">
                                 <h4>Product #PRD-9021</h4>
-                                <p>Courier: Steadfast / RedX</p>
+                                <p>Courier: DHL Express Global</p>
                             </div>
-                            <a href="https://steadfast.com.bd" target="_blank" class="track-url-btn">
+                            <a href="https://www.dhl.com" target="_blank" class="track-url-btn">
                                 <i class="fa-solid fa-location-arrow"></i> Track Live
                             </a>
                         </div>
                         <div class="tracking-item">
                             <div class="tracking-info">
                                 <h4>Product #PRD-9022</h4>
-                                <p>Courier: Pathao Cargo</p>
+                                <p>Courier: FedEx International</p>
                             </div>
-                            <a href="https://pathao.com" target="_blank" class="track-url-btn">
+                            <a href="https://www.fedex.com" target="_blank" class="track-url-btn">
                                 <i class="fa-solid fa-location-arrow"></i> Track Live
                             </a>
                         </div>
