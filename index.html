@@ -53,11 +53,11 @@
             justify-content: center;
         }
 
-        /* ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড */
+        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড */
         .auth-card {
             background: var(--surface-bg);
             border-radius: 18px;
-            padding: 35px 22px;
+            padding: 30px 22px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.95);
             border: 1.5px solid rgba(212,175,55,0.25);
@@ -65,28 +65,28 @@
         }
 
         .logo-large {
-            width: 75px;
-            height: 75px;
+            width: 65px;
+            height: 65px;
             object-fit: contain;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .brand-title-large {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 900;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .welcome-subtitle {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: var(--text-gray);
-            line-height: 1.5;
-            margin-bottom: 22px;
+            line-height: 1.4;
+            margin-bottom: 18px;
             font-family: var(--font-body);
         }
 
@@ -95,10 +95,10 @@
             background: #ffffff;
             color: #000;
             border: none;
-            padding: 13px;
+            padding: 12px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -246,6 +246,9 @@
             margin-top: 1px;
             font-family: var(--font-body);
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
         .menu-container { position: relative; margin-top: 2px; display: flex; gap: 8px; align-items: center; }
@@ -264,13 +267,18 @@
             font-size: 1.1rem;
             position: relative;
         }
+        /* ছোট এবং প্রিমিয়াম নোটিফিকেশন ব্যাজ */
         .notif-badge {
             position: absolute;
-            top: 2px; right: 2px;
+            top: 5px; right: 4px;
             background: #e74c3c;
             color: #fff;
-            font-size: 0.5rem;
-            padding: 2px 4px;
+            font-size: 0.45rem;
+            width: 13px;
+            height: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
             font-weight: 700;
         }
@@ -422,7 +430,7 @@
             font-size: 0.75rem;
         }
 
-        /* একশন রো (সাপোর্ট এবং উইথড্র বাটন) */
+        /* একশন রো (সাপোর্ট এবং রিফান্ড বাটন) */
         .action-row {
             display: flex;
             gap: 8px;
@@ -592,12 +600,12 @@
 
     <div class="page-container">
         
-        <!-- ১. ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড -->
+        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড -->
         <div class="auth-card" id="authSection">
             <img src="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400" alt="Logo" class="logo-large">
             <h1 class="brand-title-large">RORRAXY</h1>
             <p class="welcome-subtitle">
-                Customer Portal. Verify your identity with Google to configure your account, track orders and chat with sellers.
+                Welcome to Customer Portal. Verify your identity with Google to access orders and connect with sellers.
             </p>
 
             <button class="google-verify-btn" onclick="openInfoModal()">
@@ -605,11 +613,11 @@
             </button>
         </div>
 
-        <!-- ২. ইনফরমেশন ফর্ম পপআপ (অ্যাড্রেস ও কোড সহ) -->
+        <!-- ২. ইনফরমেশন ফর্ম পপআপ (শুধু ৩টি ফিল্ড: নাম, জিমেইল ও হোয়াটসঅ্যাপ) -->
         <div class="modal-overlay" id="infoModal">
             <div class="modal-card">
                 <button class="modal-close-btn" onclick="closeModal('infoModal')"><i class="fa-solid fa-xmark"></i></button>
-                <h3 class="modal-title">Complete Customer Profile</h3>
+                <h3 class="modal-title">Customer Information</h3>
                 <form id="customerForm" onsubmit="submitCustomerInfo(event)">
                     <div class="form-group">
                         <label>Full Name *</label>
@@ -631,11 +639,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Delivery Address (House/Street, City, Country) *</label>
-                        <input type="text" id="regAddress" placeholder="Enter full delivery address" required>
-                    </div>
-
                     <button type="submit" class="btn-gold-glow">Confirm & Enter Dashboard</button>
                 </form>
             </div>
@@ -647,7 +650,7 @@
             <!-- মেইন ড্যাশবোর্ড হোম কার্ড -->
             <div class="dash-card">
                 
-                <!-- হেডার: লোগো, ব্র্যান্ড, নাম, ইউআইডি (কাস্টমার আইডি) এবং নোটিফিকেশন ও মেনু -->
+                <!-- হেডার: লোগো, ব্র্যান্ড, নাম, ইউআইডি এবং জিমেইল -->
                 <div class="home-top-section">
                     <div class="home-left-info">
                         <img src="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400" alt="Logo" class="home-logo">
@@ -678,7 +681,7 @@
                                 <i class="fa-solid fa-wallet"></i> Payment Setup
                             </div>
                             <div class="menu-item" onclick="openPopupModal('tabWithdrawPopup')">
-                                <i class="fa-solid fa-money-bill-transfer"></i> Refund / Withdraw
+                                <i class="fa-solid fa-rotate-left"></i> Refund
                             </div>
                             <div class="menu-item" onclick="openPopupModal('tabPolicyPopup')">
                                 <i class="fa-solid fa-file-contract"></i> Policy
@@ -706,7 +709,7 @@
                         <span style="font-size: 0.55rem; color: #2ecc71;"><i class="fa-solid fa-circle" style="font-size: 5px;"></i> Active Seller</span>
                     </div>
                     <div class="chat-messages-area" id="chatMessagesArea">
-                        <div class="chat-msg seller">Hello! Welcome to Rorraxy. Feel free to discuss your product inquiries or order details directly with the seller here.</div>
+                        <div class="chat-msg seller">Hello! Welcome to Rorraxy. Please discuss your product inquiries or order details directly with the verified seller here.</div>
                     </div>
                     <div class="chat-input-row">
                         <input type="text" id="chatInputText" class="chat-input" placeholder="Type message to seller..." onkeypress="handleChatKeyPress(event)">
@@ -714,13 +717,13 @@
                     </div>
                 </div>
 
-                <!-- সাপোর্ট এবং উইথড্র বাটন -->
+                <!-- সাপোর্ট এবং রিফান্ড বাটন -->
                 <div class="action-row">
                     <button class="support-btn" onclick="openFirebaseChat()">
                         <i class="fa-solid fa-headset" style="font-size: 0.8rem;"></i> Support
                     </button>
-                    <button class="withdraw-quick-btn" onclick="checkWithdrawSteps()">
-                        <i class="fa-solid fa-wallet" style="font-size: 0.8rem;"></i> Refund / Withdraw
+                    <button class="withdraw-quick-btn" onclick="checkRefundSteps()">
+                        <i class="fa-solid fa-rotate-left" style="font-size: 0.8rem;"></i> Refund
                     </button>
                 </div>
             </div>
@@ -862,7 +865,6 @@
             const email = document.getElementById('regEmail').value.trim();
             const dialCode = document.getElementById('regDialCode').value;
             const phoneNum = document.getElementById('regWhatsApp').value.trim();
-            const address = document.getElementById('regAddress').value.trim();
             const phone = dialCode + " " + phoneNum;
 
             let gmailUsername = email.includes('@') ? email.split('@')[0] : email;
@@ -875,7 +877,6 @@
             localStorage.setItem('rorraxy_cust_name', name);
             localStorage.setItem('rorraxy_cust_email', email);
             localStorage.setItem('rorraxy_cust_phone', phone);
-            localStorage.setItem('rorraxy_cust_address', address);
             localStorage.setItem('rorraxy_cust_info_done', 'true');
 
             document.getElementById('infoModal').style.display = 'none';
@@ -890,7 +891,7 @@
             menu.classList.toggle('show');
         }
 
-        function checkWithdrawSteps() {
+        function checkRefundSteps() {
             const hasInfo = localStorage.getItem('rorraxy_cust_info_done') === 'true';
             const hasVerified = localStorage.getItem('rorraxy_cust_verified') === 'true';
             const hasPayment = localStorage.getItem('rorraxy_cust_payment_done') === 'true';
@@ -901,7 +902,7 @@
                 return;
             }
             if(!hasVerified) {
-                showToast("Please complete Google Authenticator verification!");
+                showToast("Please complete Google Authenticator verification for security!");
                 openPopupModal('tabVerificationPopup');
                 return;
             }
@@ -922,7 +923,6 @@
             let htmlContent = `<button class="modal-close-btn" onclick="closeModal('popupModalOverlay')"><i class="fa-solid fa-xmark"></i></button>`;
 
             if(tabType === 'tabInfoPopup') {
-                let savedAddress = localStorage.getItem('rorraxy_cust_address') || '';
                 htmlContent += `
                     <h3 class="modal-title">Customer Information</h3>
                     <div class="info-display-box">
@@ -945,20 +945,7 @@
                             <div class="info-val">${localStorage.getItem('rorraxy_cust_phone') || '+880 17XXXXXXXX'}</div>
                         </div>
                         <i class="fa-brands fa-whatsapp" style="background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
-                    </div>
-                    <div class="info-display-box">
-                        <div class="info-content-wrap">
-                            <div class="info-lbl">Delivery Address</div>
-                            <div class="info-val" id="displayAddressVal">${savedAddress || 'Not Provided'}</div>
-                        </div>
-                        <i class="fa-solid fa-location-dot" style="background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
-                    </div>
-                    
-                    <div class="form-group" style="margin-top: 12px;">
-                        <label>Update Delivery Address *</label>
-                        <input type="text" id="userAddressInput" placeholder="House/Street, City, Country" value="${savedAddress}">
-                    </div>
-                    <button class="btn-gold-glow" onclick="saveUserAddress()">Save Address</button>`;
+                    </div>`;
             } 
             else if(tabType === 'tabVerificationPopup') {
                 const isVerified = localStorage.getItem('rorraxy_cust_verified') === 'true';
@@ -966,7 +953,7 @@
                 const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${otpauthData}`;
 
                 htmlContent += `
-                    <h3 class="modal-title">Verification</h3>
+                    <h3 class="modal-title">Security Verification</h3>
                     <p style="font-size: 0.75rem; color: var(--text-gray); text-align: center; margin-bottom: 10px; font-family: var(--font-body);">
                         Scan with Google Authenticator. Issuer name: <strong>RORRAXY</strong>.
                     </p>
@@ -1004,7 +991,7 @@
             } 
             else if(tabType === 'tabWithdrawPopup') {
                 htmlContent += `
-                    <h3 class="modal-title">Refund / Withdraw</h3>
+                    <h3 class="modal-title">Refund Request</h3>
                     <div class="info-display-box">
                         <div class="info-content-wrap">
                             <div class="info-lbl">Return Amount Balance</div>
@@ -1013,10 +1000,10 @@
                         <i class="fa-solid fa-wallet" style="background:var(--gold-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
                     </div>
                     <div class="form-group" style="margin-top: 12px;">
-                        <label>Request Amount ($ USD)</label>
+                        <label>Refund Amount ($ USD)</label>
                         <input type="number" id="withdrawAmount" placeholder="Enter amount">
                     </div>
-                    <button class="btn-gold-glow" onclick="requestWithdrawal()">Submit Request</button>`;
+                    <button class="btn-gold-glow" onclick="requestWithdrawal()">Submit Refund Request</button>`;
             } 
             else if(tabType === 'tabNotificationPopup') {
                 htmlContent += `
@@ -1045,17 +1032,6 @@
 
             contentBox.innerHTML = htmlContent;
             overlay.style.display = 'flex';
-        }
-
-        function saveUserAddress() {
-            let addr = document.getElementById('userAddressInput').value.trim();
-            if(!addr) {
-                showToast("Please enter a valid delivery address!");
-                return;
-            }
-            localStorage.setItem('rorraxy_cust_address', addr);
-            showToast("Delivery address updated successfully!");
-            closeModal('popupModalOverlay');
         }
 
         function verifyAuthCode() {
@@ -1110,10 +1086,10 @@
         function requestWithdrawal() {
             const amt = document.getElementById('withdrawAmount').value;
             if(!amt || amt <= 0) {
-                showToast("Enter a valid request amount!");
+                showToast("Enter a valid refund amount!");
                 return;
             }
-            showToast("Refund/Withdraw request submitted successfully!");
+            showToast("Refund request submitted successfully!");
             document.getElementById('withdrawAmount').value = "";
             closeModal('popupModalOverlay');
         }
@@ -1130,7 +1106,6 @@
 
             let area = document.getElementById('chatMessagesArea');
             
-            // কাস্টমার মেসেজ যোগ করা
             let custMsg = document.createElement('div');
             custMsg.className = 'chat-msg customer';
             custMsg.innerText = txt;
@@ -1138,11 +1113,10 @@
             input.value = "";
             area.scrollTop = area.scrollHeight;
 
-            // অটো রিপ্লাই বা সেলার সিমুলেশন রেসপন্স
             setTimeout(() => {
                 let sellerMsg = document.createElement('div');
                 sellerMsg.className = 'chat-msg seller';
-                sellerMsg.innerText = "Thanks for your message! The seller has received your inquiry regarding the order and will reply shortly.";
+                sellerMsg.innerText = "Thanks for your message! The seller has received your inquiry and will respond shortly.";
                 area.appendChild(sellerMsg);
                 area.scrollTop = area.scrollHeight;
             }, 1000);
