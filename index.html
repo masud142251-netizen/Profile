@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RORRAXY | Customer Dashboard</title>
+    <title>RORRAXY | Luxury Global E-Commerce</title>
     
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 12px;
         }
 
         h1, h2, h3, h4 { font-family: var(--font-luxury); }
@@ -52,11 +52,11 @@
             justify-content: center;
         }
 
-        /* ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড */
+        /* ঝুড়ি ও ভেরিফিকেশন কার্ড */
         .auth-card {
             background: var(--surface-bg);
             border-radius: 18px;
-            padding: 35px 20px;
+            padding: 25px 18px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.95);
             border: 1.5px solid rgba(212,175,55,0.25);
@@ -64,30 +64,77 @@
         }
 
         .logo-large {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .brand-title-large {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 900;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        /* পপআপ সাবটাইটেল এখন নিখুঁত সাদা রঙের */
         .welcome-subtitle {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 1px;
-            margin-bottom: 22px;
+            margin-bottom: 15px;
+            font-family: var(--font-luxury);
+        }
+
+        /* কার্ট বা ঝুড়ির প্রোডাক্ট লিস্ট */
+        .cart-items-container {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .cart-item-row {
+            background: #000;
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .cart-item-info h5 { color: #fcf6ba; font-size: 0.75rem; margin-bottom: 2px; }
+        .cart-item-info p { color: var(--text-gray); font-size: 0.65rem; }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 4px;
+        }
+
+        .cart-total-box {
+            background: rgba(212,175,55,0.06);
+            border: 1.5px solid rgba(212,175,55,0.3);
+            padding: 10px 14px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
             font-family: var(--font-luxury);
         }
 
@@ -96,10 +143,10 @@
             background: #ffffff;
             color: #000;
             border: none;
-            padding: 13px;
+            padding: 12px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -334,7 +381,7 @@
         .menu-item i { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 16px; text-align: center; }
         .menu-item:hover { background: rgba(212,175,55,0.1); color: #fcf6ba; }
 
-        /* ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking (স্বতন্ত্র সোনালী বাটন ও টাচ অ্যানিমেশন), Return Amount */
+        /* ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking, Return Amount */
         .stats-grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -354,7 +401,6 @@
         .stat-lbl { font-size: 0.52rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; font-weight: 800; margin-bottom: 3px; font-family: var(--font-body); white-space: nowrap; }
         .stat-val { font-size: 1rem; font-weight: 900; color: #fff; font-family: var(--font-luxury); white-space: nowrap; }
 
-        /* ট্র্যাকিং কার্ডের জন্য স্বতন্ত্র প্রিমিয়াম সোনালী বাটন ও টাচ হ্যান্ড অ্যানিমেশন */
         .stat-card-tracking {
             background: var(--gold-gradient);
             border: none;
@@ -369,7 +415,6 @@
             color: #000;
         }
         
-        /* টাচ বা হ্যান্ড অ্যানিমেশন আইকন */
         .touch-hand-anim {
             display: inline-block;
             animation: touchBounce 1.2s infinite ease-in-out;
@@ -380,7 +425,6 @@
             50% { transform: translateY(-4px) scale(1.15); }
         }
 
-        /* ট্র্যাকিং ইউআরএল লিস্ট স্টাইল (ইন্টারন্যাশনাল কুরিয়ার সহ) */
         .tracking-list {
             display: flex;
             flex-direction: column;
@@ -500,7 +544,6 @@
             font-size: 0.75rem;
         }
 
-        /* একশন রো (সাপোর্ট এবং রিফান্ড বাটন) */
         .action-row {
             display: flex;
             gap: 8px;
@@ -548,7 +591,6 @@
         }
         .withdraw-quick-btn:hover { opacity: 0.9; }
 
-        /* ইনফো ডিসপ্লে বক্স */
         .info-display-box {
             background: #040404;
             border: 1.5px solid rgba(212,175,55,0.25);
@@ -669,11 +711,22 @@
 
     <div class="page-container">
         
-        <!-- ১. ভিআইপি ল্যান্ডিং / গুগল ভেরিফিকেশন কার্ড (সাদা রঙের নিখুঁত সাবটাইটেল সহ) -->
+        <!-- ১. ঝুড়ি ও গুগল ভেরিফিকেশন ল্যান্ডিং কার্ড -->
         <div class="auth-card" id="authSection">
             <img src="https://lh3.googleusercontent.com/d/1PD_g_agcbmm7bbJTHoOWss8YtQ17LNsb=s400" alt="Logo" class="logo-large">
             <h1 class="brand-title-large">RORRAXY</h1>
-            <p class="welcome-subtitle">Welcome to Customer Portal</p>
+            <p class="welcome-subtitle">Shopping Cart & Checkout</p>
+
+            <!-- কার্ট বা ঝুড়ির প্রোডাক্ট লিস্ট -->
+            <div class="cart-items-container" id="cartItemsList">
+                <!-- ডাইনামিক কার্ট আইটেম এখানে লোড হবে -->
+            </div>
+
+            <!-- মোট হিসাব বক্স -->
+            <div class="cart-total-box">
+                <span>Total Amount:</span>
+                <span id="cartTotalAmt">$155.00</span>
+            </div>
 
             <button class="google-verify-btn" onclick="openInfoModal()">
                 <i class="fa-brands fa-google" style="color:#ea4335;"></i> Continue & Verify with Google
@@ -762,7 +815,7 @@
                     </div>
                 </div>
 
-                <!-- ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking (স্বতন্ত্র সোনালী বাটন ও টাচ অ্যানিমেশন সহ), Return Amount -->
+                <!-- ৩টি আলাদা প্রিমিয়াম বক্স: Total Orders, Tracking, Return Amount -->
                 <div class="stats-grid-3">
                     <div class="stat-card" onclick="openPopupModal('tabOrdersPopup')">
                         <div class="stat-lbl">Total Orders</div>
@@ -819,6 +872,46 @@
     </div>
 
     <script>
+        // স্যাম্পল কার্ট ডাটা (হোমপেজ থেকে Add to Cart করা প্রোডাক্টসমূহ)
+        let cartItems = [
+            { id: 1, name: "Luxury Gamar Wood Table", price: 120.00, qty: 1 },
+            { id: 2, name: "Baby Organic Cotton Set", price: 35.00, qty: 1 }
+        ];
+
+        function renderCart() {
+            const container = document.getElementById('cartItemsList');
+            if(!container) return;
+            
+            if(cartItems.length === 0) {
+                container.innerHTML = `<div style="text-align:center; color:var(--text-gray); font-size:0.75rem; padding: 15px;">Your cart is empty</div>`;
+                document.getElementById('cartTotalAmt').innerText = "$0.00";
+                return;
+            }
+
+            let html = "";
+            let total = 0;
+            cartItems.forEach((item, index) => {
+                total += item.price * item.qty;
+                html += `
+                    <div class="cart-item-row">
+                        <div class="cart-item-info">
+                            <h5>${item.name}</h5>
+                            <p>$${item.price.toFixed(2)} x ${item.qty}</p>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeCartItem(${index})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            document.getElementById('cartTotalAmt').innerText = "$" + total.toFixed(2);
+        }
+
+        function removeCartItem(index) {
+            cartItems.splice(index, 1);
+            renderCart();
+            showToast("Product removed from cart");
+        }
+
         const countriesList = [
             { name: "Afghanistan", flag: "🇦🇫", code: "+93" }, { name: "Albania", flag: "🇦🇱", code: "+355" },
             { name: "Algeria", flag: "🇩🇿", code: "+213" }, { name: "Andorra", flag: "🇦🇩", code: "+376" },
@@ -910,6 +1003,7 @@
         ];
 
         window.addEventListener('DOMContentLoaded', () => {
+            renderCart();
             const dialCodeSelect = document.getElementById('regDialCode');
             if(dialCodeSelect) {
                 countriesList.forEach(c => {
@@ -963,7 +1057,7 @@
             document.getElementById('infoModal').style.display = 'none';
             document.getElementById('authSection').style.display = 'none';
             document.getElementById('dashboardSection').style.display = 'flex';
-            showToast("Customer profile configured successfully!");
+            showToast("Order confirmed & profile configured!");
         }
 
         function toggleMenu(e) {
@@ -1231,7 +1325,6 @@
             showToast("Connecting to Firebase Live Support...");
         }
 
-        /* চ্যাটবোর্ড লজিক */
         function sendChatMessage() {
             let input = document.getElementById('chatInputText');
             let txt = input.value.trim();
@@ -1264,6 +1357,7 @@
         window.addEventListener('click', (e) => {
             const menu = document.getElementById('dropdownMenu');
             if(menu && menu.classList.contains('show') && !e.target.closest('.menu-container')) {
+                menu.classList.remove('no-show');
                 menu.classList.remove('show');
             }
             const popupOverlay = document.getElementById('popupModalOverlay');
